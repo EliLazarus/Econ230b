@@ -33,7 +33,7 @@ with the 1993 tax increase from Goolsbee (2000) study?
 
 
 ```{r plot and Q1a, echo=FALSE}
-ggplot(execomp, aes(EXEC_FULLNAME,TOTAL_SEC)) + geom_point(aes (colour = YEAR))# )  + facet_grid(YEAR ~ .)
+#  ggplot(execomp, aes(EXEC_FULLNAME,TOTAL_SEC)) + geom_point(aes (colour = YEAR))# )  + facet_grid(YEAR ~ .)
 
 
 ```
@@ -45,7 +45,7 @@ to the tax change as they did with the 1993 tax change?
 ```
 
 ```{r Q1d, echo=FALSE}
-execomp %>% group_by(YEAR) %>% summarise('Taxable Income'=mean(na.omit(TDC1)),SALARY=mean(na.omit(SALARY)),Bonus=mean(na.omit(BONUS)), LTIP=mean(na.omit(LTIP)),Options=mean(na.omit(OPTION_AWARDS_FV)),'Other Compensation'=mean(na.omit(OTHCOMP))) %>% t()
+execomp %>% group_by(YEAR) %>% summarise('Taxable Income'=mean(na.omit(TOTAL_SEC)),SALARY=mean(na.omit(SALARY)),Bonus=mean(na.omit(BONUS)), LTIP=mean(na.omit(LTIP)),Options=mean(na.omit(OPTION_AWARDS_FV)),'Other Compensation'=mean(na.omit(OTHCOMP))) %>% t()
 
 print("https://en.wikipedia.org/wiki/Income_tax_in_the_United_States#Marginal_tax_rates_since_2008")
 
